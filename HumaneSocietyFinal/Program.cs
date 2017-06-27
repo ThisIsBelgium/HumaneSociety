@@ -10,7 +10,7 @@ namespace HumaneSocietyFinal
     {
         static void Main(string[] args)
         {
-            Adopter first = new Adopter();
+            
         }
     }
 }

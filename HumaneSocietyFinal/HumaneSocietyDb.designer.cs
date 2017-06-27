@@ -136,6 +136,14 @@ namespace HumaneSocietyFinal
 		public Adopter()
 		{
 			OnCreated();
+            this._Name = UI.GetName();
+            this._Gender = UI.GetGender();
+            this._Budget = UI.GetBudget();
+            this._HaveChildren = UI.GetFamily();
+            this._HousingEnvironment = UI.GetHousing();
+            this._AnimalTypePreference = UI.GetAnimalTypePreference();
+            this._AnimalSizePreference = UI.GetAnimalSizePreference();
+            this._age = UI.GetAge();
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdopterID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
@@ -359,6 +367,16 @@ namespace HumaneSocietyFinal
 		
 		private string _Name;
 		
+		private System.Nullable<int> _Cost;
+		
+		private System.Nullable<bool> _Adopted;
+		
+		private string _Gender;
+		
+		private System.Nullable<int> _AmountOfFood;
+		
+		private string _TypeOfFood;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -377,11 +395,31 @@ namespace HumaneSocietyFinal
     partial void OnRoomNumberChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
+    partial void OnCostChanging(System.Nullable<int> value);
+    partial void OnCostChanged();
+    partial void OnAdoptedChanging(System.Nullable<bool> value);
+    partial void OnAdoptedChanged();
+    partial void OnGenderChanging(string value);
+    partial void OnGenderChanged();
+    partial void OnAmountOfFoodChanging(System.Nullable<int> value);
+    partial void OnAmountOfFoodChanged();
+    partial void OnTypeOfFoodChanging(string value);
+    partial void OnTypeOfFoodChanged();
     #endregion
 		
 		public Animal()
 		{
 			OnCreated();
+            this._Age = UI.GetAge();
+            this._AnimalWeight = UI.GetWeight();
+            this._AnimalType = UI.GetAnimalType();
+            this._HasShots = false;
+            this._Name = UI.GetName();
+            this._Cost = UI.GetPrice();
+            this._Adopted = false;
+            this._Gender = UI.GetGender();
+            this._AmountOfFood =Convert.ToInt32(UI.GetFoodAmount());
+
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
@@ -520,6 +558,106 @@ namespace HumaneSocietyFinal
 					this._Name = value;
 					this.SendPropertyChanged("Name");
 					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cost", DbType="Int")]
+		public System.Nullable<int> Cost
+		{
+			get
+			{
+				return this._Cost;
+			}
+			set
+			{
+				if ((this._Cost != value))
+				{
+					this.OnCostChanging(value);
+					this.SendPropertyChanging();
+					this._Cost = value;
+					this.SendPropertyChanged("Cost");
+					this.OnCostChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Adopted", DbType="Bit")]
+		public System.Nullable<bool> Adopted
+		{
+			get
+			{
+				return this._Adopted;
+			}
+			set
+			{
+				if ((this._Adopted != value))
+				{
+					this.OnAdoptedChanging(value);
+					this.SendPropertyChanging();
+					this._Adopted = value;
+					this.SendPropertyChanged("Adopted");
+					this.OnAdoptedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NChar(10)")]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this.OnGenderChanging(value);
+					this.SendPropertyChanging();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountOfFood", DbType="Int")]
+		public System.Nullable<int> AmountOfFood
+		{
+			get
+			{
+				return this._AmountOfFood;
+			}
+			set
+			{
+				if ((this._AmountOfFood != value))
+				{
+					this.OnAmountOfFoodChanging(value);
+					this.SendPropertyChanging();
+					this._AmountOfFood = value;
+					this.SendPropertyChanged("AmountOfFood");
+					this.OnAmountOfFoodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeOfFood", DbType="VarChar(50)")]
+		public string TypeOfFood
+		{
+			get
+			{
+				return this._TypeOfFood;
+			}
+			set
+			{
+				if ((this._TypeOfFood != value))
+				{
+					this.OnTypeOfFoodChanging(value);
+					this.SendPropertyChanging();
+					this._TypeOfFood = value;
+					this.SendPropertyChanged("TypeOfFood");
+					this.OnTypeOfFoodChanged();
 				}
 			}
 		}
