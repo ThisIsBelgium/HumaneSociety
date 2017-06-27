@@ -160,7 +160,7 @@ namespace HumaneSocietyFinal
                             select animal;
             foreach (var animal in typeQuery)
             {
-                Console.WriteLine(animal.Name + " " + animal.AnimalSpecies + " " + animal.Age + " " + animal.Gender);
+                Console.WriteLine("Name:" + animal.Name + " " + "Species: " + animal.AnimalSpecies + " " + "Age: " + animal.Age + " " + "Gender: " + animal.Gender);
                 animalSearch.Add(animal);
             }
             Console.WriteLine("Would you like to refine your search?(yes/no)");
@@ -186,7 +186,7 @@ namespace HumaneSocietyFinal
                     }
                     else
                     {
-                        Console.WriteLine(animal.Name + " " + animal.AnimalSpecies + " " + animal.Age + " " + animal.Gender);
+                        Console.WriteLine("Name:" + animal.Name + " " + "Species: " + animal.AnimalSpecies + " " +"Age: " + animal.Age + " " + "Gender: " + animal.Gender);
                     }
                 }
                 Console.WriteLine("Would you like to refine your search?(yes/no)");
@@ -218,7 +218,7 @@ namespace HumaneSocietyFinal
                     }
                     else
                     {
-                        Console.WriteLine(animal.Name + " " + animal.AnimalSpecies + " " + animal.Age + " " + animal.Gender);
+                        Console.WriteLine("Name:" + animal.Name + " " + "Species: " + animal.AnimalSpecies + " " + "Age: " + animal.Age + " " + "Gender: " + animal.Gender);
                     }
                 }
                 Console.WriteLine("Would you like to refine your search?(yes/no)");
@@ -249,7 +249,7 @@ namespace HumaneSocietyFinal
                     }
                     else
                     {
-                        Console.WriteLine(animal.Name + " " + animal.AnimalSpecies + " " + animal.Age + " " + animal.Gender);
+                        Console.WriteLine("Name:" + animal.Name + " " + "Species: " + animal.AnimalSpecies + " " + "Age: " + animal.Age + " " + "Gender: " + animal.Gender);
                     }
                 }
                 Console.WriteLine("Would you like to refine your search?(yes/no)");
