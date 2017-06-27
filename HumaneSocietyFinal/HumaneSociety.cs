@@ -133,7 +133,7 @@ namespace HumaneSocietyFinal
                                  select Animal;
             foreach (var animal in selectedAnimal)
             {
-                Console.WriteLine("animal name: " + animal.Name + "\n" + "animal has shots: " + animal.HasShots + "\n" + "animal is adopted: " + animal.Adopted + "\n" + "animal costs: " + animal.Cost);
+                Console.WriteLine("animal name: " + animal.Name + "\n" + "animal has shots:" + animal.HasShots + "\n" + "animal is adopted:" + animal.Adopted + "\n" + "animal costs:" + animal.Cost);
                 animal.HasShots = UI.UpdateShots();
                 animal.Adopted = UI.UpdateAdoptionStatus();
                 if (animal.Adopted == true)
@@ -160,7 +160,7 @@ namespace HumaneSocietyFinal
                             select animal;
             foreach (var animal in typeQuery)
             {
-                Console.WriteLine("Name:" + animal.Name + " " + "Species: " + animal.AnimalSpecies + " " + "Age: " + animal.Age + " " + "Gender: " + animal.Gender);
+                Console.WriteLine("Name:" + animal.Name + " " + "Species:" + animal.AnimalSpecies + " " + "Age:" + animal.Age + " " + "Gender:" + animal.Gender);
                 animalSearch.Add(animal);
             }
             Console.WriteLine("Would you like to refine your search?(yes/no)");
@@ -186,7 +186,7 @@ namespace HumaneSocietyFinal
                     }
                     else
                     {
-                        Console.WriteLine("Name:" + animal.Name + " " + "Species: " + animal.AnimalSpecies + " " +"Age: " + animal.Age + " " + "Gender: " + animal.Gender);
+                        Console.WriteLine("Name:" + animal.Name + " " + "Species:" + animal.AnimalSpecies + " " +"Age:" + animal.Age + " " + "Gender:" + animal.Gender);
                     }
                 }
                 Console.WriteLine("Would you like to refine your search?(yes/no)");
@@ -218,7 +218,7 @@ namespace HumaneSocietyFinal
                     }
                     else
                     {
-                        Console.WriteLine("Name:" + animal.Name + " " + "Species: " + animal.AnimalSpecies + " " + "Age: " + animal.Age + " " + "Gender: " + animal.Gender);
+                        Console.WriteLine("Name:" + animal.Name + " " + "Species:" + animal.AnimalSpecies + " " + "Age:" + animal.Age + " " + "Gender:" + animal.Gender);
                     }
                 }
                 Console.WriteLine("Would you like to refine your search?(yes/no)");
@@ -243,13 +243,13 @@ namespace HumaneSocietyFinal
                 string genderSelection = UI.GetGender();
                 foreach (Animal animal in search)
                 {
-                    if (genderSelection != animal.Gender)
+                    if (genderSelection != animal.Gender.Trim())
                     {
                         search.Remove(animal);
                     }
                     else
                     {
-                        Console.WriteLine("Name:" + animal.Name + " " + "Species: " + animal.AnimalSpecies + " " + "Age: " + animal.Age + " " + "Gender: " + animal.Gender);
+                        Console.WriteLine("Name:" + animal.Name + " " + "Species:" + animal.AnimalSpecies + " " + "Age:" + animal.Age + " " + "Gender:" + animal.Gender);
                     }
                 }
                 Console.WriteLine("Would you like to refine your search?(yes/no)");
