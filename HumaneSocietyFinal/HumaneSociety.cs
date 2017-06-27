@@ -9,7 +9,7 @@ namespace HumaneSocietyFinal
 {
     public class HumaneSociety
     {
-        int[] rooms = new int[45];
+        int[] rooms = new int[100];
         HumaneSocietyDbDataContext newDB = new HumaneSocietyDbDataContext();
         public void Run()
         {
