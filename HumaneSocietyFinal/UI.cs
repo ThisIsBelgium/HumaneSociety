@@ -12,7 +12,7 @@ namespace HumaneSocietyFinal
         {
             Console.Clear();
             int Age;
-            Console.WriteLine("Enter your age");
+            Console.WriteLine("Enter age");
             Age = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
             Console.WriteLine(Age + " is this correct?(yes/no)");
@@ -55,8 +55,9 @@ namespace HumaneSocietyFinal
         }
         public static string GetGender()
         {
+            Console.Clear();
             string Gender;
-            Console.WriteLine("Enter your gender");
+            Console.WriteLine("Enter gender");
             Gender = Console.ReadLine();
             Console.Clear();
             Console.WriteLine(Gender + " is this correct(yes/no)");
@@ -133,13 +134,7 @@ namespace HumaneSocietyFinal
             }
             return adopterTypePreference;
         }
-        public static int MainMenu()
-        {
-            Console.Clear();
-            Console.WriteLine("What would you like to do?" + "\n" +"1.Add new animal" + "\n" + "2.Adoption process" + "\n" + "3.Give shops" + "\n" + "4.Add adopter profile" + "\n" + "Search animals" + "\n" + "Choose the number next to your choice");
-            int selection=Convert.ToInt32(Console.ReadLine());
-            return selection;
-        }
+       
         public static string GetAdopterName()
         {
             Console.Clear();
@@ -164,7 +159,7 @@ namespace HumaneSocietyFinal
             Console.WriteLine("Enter animal name");
             name = Console.ReadLine();
             Console.Clear();
-            Console.WriteLine(name + " is this the correct name(yes/no)");
+            Console.WriteLine(name + " is this the correct name?(yes/no)");
             string resubmitSelection = Console.ReadLine();
             if (resubmitSelection == "no")
             {
@@ -179,7 +174,7 @@ namespace HumaneSocietyFinal
             Console.WriteLine("Enter type of house");
             housing = Console.ReadLine();
             Console.Clear();
-            Console.WriteLine(housing + " is this correct(yes/no)");
+            Console.WriteLine(housing + " is this correct?(yes/no)");
             string resubmitSelection = Console.ReadLine();
             if(resubmitSelection == "no")
             {
@@ -193,7 +188,8 @@ namespace HumaneSocietyFinal
             int price;
             Console.WriteLine("Set the price of the animal");
             price = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(price + " is this correct(yes/no)");
+            Console.Clear();
+            Console.WriteLine(price + " is this correct?(yes/no)");
             string resubmitSelection = Console.ReadLine();
             if (resubmitSelection == "no")
             {
@@ -202,20 +198,85 @@ namespace HumaneSocietyFinal
             return price;
 
         }
-        public static string GetFoodAmount()
+        public static int GetFoodAmount()
         {
             Console.Clear();
-            string foodAmount;
+            int foodAmount;
             Console.WriteLine("How much food per week?");
-            foodAmount = Console.ReadLine();
-            Console.WriteLine(foodAmount + " is this correct(yes/no)");
-            string resumbitSelection = Console.ReadLine();
-            if (resumbitSelection == "no")
+            foodAmount = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine(foodAmount + " is this correct?(yes/no)");
+            string resubmitSelection = Console.ReadLine();
+            if (resubmitSelection == "no")
             {
                 GetFoodAmount();
             }
             return foodAmount;               
         }
-
+        public static string GetFoodType()
+        {
+            Console.Clear();
+            string foodType;
+            Console.WriteLine("What type of food?");
+            foodType = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine(foodType + " is this correct?(yes/no)");
+            string resubmitSelection = Console.ReadLine();
+            if (resubmitSelection == "no")
+            {
+                GetFoodAmount();
+            }
+            return foodType;
+        }
+        public static bool UpdateShots()
+        {
+            bool hasShots = false;
+            Console.WriteLine("Give this animal its shots?(yes/no)");
+            string shotSelection = Console.ReadLine();
+            if (shotSelection == "yes")
+            {
+                hasShots = true;
+            }
+            return hasShots;
+        }
+        public static bool UpdateAdoptionStatus()
+        {
+            bool adoptionStatus = false;
+            Console.WriteLine("Is this animal being adopted today?(yes/no)");
+            string adoptionSelection = Console.ReadLine();
+            if(adoptionSelection == "yes")
+            {
+                adoptionStatus = true;
+            }
+            return adoptionStatus;
+        }
+        public static int GetMoney(int cost)
+        {
+            Console.WriteLine("amount to be paid: " + cost +"\n" + "press enter when paymeny is submitted");
+            Console.ReadLine();
+            return cost;
+        }
+        public static string GetSpecies()
+        {
+            Console.Clear();
+            string species;
+            Console.WriteLine("Enter the breed or species");
+            species = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine(species + " is this correct?(yes/no)");
+            string speciesSelection = Console.ReadLine();
+            if(speciesSelection == "no")
+            {
+                GetSpecies();
+            }
+            return species;
+        }
+        public static int MainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("Welcome to the Humane Society app what would you like to do" + "\n" + "1.Add a new animal" + "\n" +"2.Add a new adopter" + "\n" + "3.Update exisiting animal" + "\n" + "4.Search for animals" + "\n" + "Select number next to your choice");
+            int selection = Convert.ToInt32(Console.ReadLine());
+            return selection;
+        }
     }
 }

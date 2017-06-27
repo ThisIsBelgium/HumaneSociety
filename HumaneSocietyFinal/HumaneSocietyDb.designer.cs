@@ -377,6 +377,8 @@ namespace HumaneSocietyFinal
 		
 		private string _TypeOfFood;
 		
+		private string _AnimalSpecies;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -405,21 +407,14 @@ namespace HumaneSocietyFinal
     partial void OnAmountOfFoodChanged();
     partial void OnTypeOfFoodChanging(string value);
     partial void OnTypeOfFoodChanged();
+    partial void OnAnimalSpeciesChanging(string value);
+    partial void OnAnimalSpeciesChanged();
     #endregion
 		
 		public Animal()
 		{
 			OnCreated();
-            this._Age = UI.GetAge();
-            this._AnimalWeight = UI.GetWeight();
-            this._AnimalType = UI.GetAnimalType();
-            this._HasShots = false;
-            this._Name = UI.GetName();
-            this._Cost = UI.GetPrice();
-            this._Adopted = false;
-            this._Gender = UI.GetGender();
-            this._AmountOfFood =Convert.ToInt32(UI.GetFoodAmount());
-
+            
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
@@ -658,6 +653,26 @@ namespace HumaneSocietyFinal
 					this._TypeOfFood = value;
 					this.SendPropertyChanged("TypeOfFood");
 					this.OnTypeOfFoodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnimalSpecies", DbType="VarChar(100)")]
+		public string AnimalSpecies
+		{
+			get
+			{
+				return this._AnimalSpecies;
+			}
+			set
+			{
+				if ((this._AnimalSpecies != value))
+				{
+					this.OnAnimalSpeciesChanging(value);
+					this.SendPropertyChanging();
+					this._AnimalSpecies = value;
+					this.SendPropertyChanged("AnimalSpecies");
+					this.OnAnimalSpeciesChanged();
 				}
 			}
 		}

@@ -10,6 +10,8 @@ namespace HumaneSocietyFinal
     {
         static void Main(string[] args)
         {
+            HumaneSociety first = new HumaneSociety();
+            first.Run();
             
         }
     }

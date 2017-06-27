@@ -8,10 +8,10 @@
         <elementListCompartment Id="103a1441-365e-4432-941f-cea37bd8dfc3" absoluteBounds="5.015, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="36299bca-9220-4318-8c62-f1607725d9d1" absoluteBounds="2.875, 0.5, 2, 2.7324039713541666">
+    <classShape Id="069a1096-01f3-4595-870a-7954b2f9670f" absoluteBounds="2.625, 0.5, 2, 3.3093082682291666">
       <DataClassMoniker Name="/HumaneSocietyDbDataContext/Animal" />
       <nestedChildShapes>
-        <elementListCompartment Id="74439f8a-998f-4242-9ad4-0887b8617273" absoluteBounds="2.8899999999999997, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e5d307a4-22f2-4748-b0d5-63486d25e3ef" absoluteBounds="2.6399999999999997, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

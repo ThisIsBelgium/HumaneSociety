@@ -25,6 +25,9 @@
       <Column Name="Cost" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Adopted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Gender" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="AmountOfFood" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeOfFood" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AnimalSpecies" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

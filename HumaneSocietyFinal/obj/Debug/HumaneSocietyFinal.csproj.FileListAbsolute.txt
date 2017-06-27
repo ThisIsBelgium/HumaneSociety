@@ -7,3 +7,6 @@ C:\Users\wheeler\Desktop\School\C#\HumaneSocietyFinal\HumaneSocietyFinal\obj\Deb
 C:\Users\wheeler\Desktop\School\C# git\HumaneSociety\HumaneSocietyFinal\bin\Debug\HumaneSocietyFinal.exe.config
 C:\Users\wheeler\Desktop\School\C# git\HumaneSociety\HumaneSocietyFinal\obj\Debug\HumaneSocietyFinal.exe
 C:\Users\wheeler\Desktop\School\C# git\HumaneSociety\HumaneSocietyFinal\obj\Debug\HumaneSocietyFinal.pdb
+C:\Users\wheeler\Desktop\School\C# git\HumaneSociety\HumaneSocietyFinal\bin\Debug\HumaneSocietyFinal.exe
+C:\Users\wheeler\Desktop\School\C# git\HumaneSociety\HumaneSocietyFinal\bin\Debug\HumaneSocietyFinal.pdb
+C:\Users\wheeler\Desktop\School\C# git\HumaneSociety\HumaneSocietyFinal\obj\Debug\HumaneSocietyFinal.csprojResolveAssemblyReference.cache
