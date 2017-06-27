@@ -274,7 +274,7 @@ namespace HumaneSocietyFinal
         public static int MainMenu()
         {
             Console.Clear();
-            Console.WriteLine("Welcome to the Humane Society app what would you like to do" + "\n" + "1.Add a new animal" + "\n" +"2.Add a new adopter" + "\n" + "3.Update exisiting animal" + "\n" + "4.Search for animals" + "\n" + "Select number next to your choice");
+            Console.WriteLine("Welcome to the Humane Society app what would you like to do" + "\n" + "1.Add a new animal" + "\n" +"2.Add a new adopter" + "\n" + "3.Update exisiting animal" + "\n" + "4.Search for animals" + "\n" + "5.Import CSV" +  "\n" + "Select number next to your choice");
             int selection = Convert.ToInt32(Console.ReadLine());
             return selection;
         }

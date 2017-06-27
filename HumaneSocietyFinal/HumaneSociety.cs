@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace HumaneSocietyFinal
 {
@@ -28,6 +29,10 @@ namespace HumaneSocietyFinal
             else if (selection == 4)
             {
                 SearchAnimals();
+            }
+            else if (selection == 5)
+            {
+                ImportAnimalCSV();
             }
             else
             {
@@ -265,6 +270,47 @@ namespace HumaneSocietyFinal
                 }
             }
         }
+        public void ImportAnimalCSV()
+        {
+            Console.Clear();
+            Console.WriteLine("enter file path");
+            string filepath = Console.ReadLine();
+            var query = from line in File.ReadLines(filepath)
+                        let csvLines = line.Split(';')
+                        from csvLine in csvLines
+                        where !String.IsNullOrWhiteSpace(csvLine)
+                        let data = csvLine.Split(',')
+                        select new
+                        {
+                            Age = data[0],
+                            AnimalWeight = data[1],
+                            AnimalType = data[2],
+                            Name = data[3],
+                            Cost = data[4],
+                            Gender = data[5],
+                            AmountOfFood = data[6],
+                            TypeOfFood = data[7],
+                            AnimalSpecies = data[8]
+
+
+                        };
+            foreach(var animal in query)
+            {
+                Animal newAnimal = new Animal();
+                newAnimal.Age = Convert.ToInt32(animal.Age);
+                newAnimal.AnimalWeight = Convert.ToInt32(animal.AnimalWeight);
+                newAnimal.AnimalType = animal.AnimalType;
+                newAnimal.Name = animal.Name;
+                newAnimal.Cost = Convert.ToInt32(animal.Cost);
+                newAnimal.Gender = animal.Gender;
+                newAnimal.AmountOfFood = Convert.ToInt32(animal.AmountOfFood);
+                newAnimal.TypeOfFood = animal.TypeOfFood;
+                newAnimal.AnimalSpecies = animal.AnimalSpecies;
+                newDB.Animals.InsertOnSubmit(newAnimal);
+                newDB.SubmitChanges();
+            }
+        }
+
     }
 }
 
